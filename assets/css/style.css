@@ -16,6 +16,8 @@
   color: white;
   display: block;
   margin-top: 10%;
+  
+
   margin-left: auto;
   margin-right: auto;
   box-shadow: 5px 5px 0px #189699;
@@ -45,6 +47,11 @@
   margin: 0 auto;
 }
 
+#addQuantity, #minusQuantity {
+  margin-top: 0%;
+  margin-left: 0%;
+}
+
 #budgetButton {
   margin-top: 5%;
 }
@@ -68,6 +75,7 @@ body {
   background-color: #FFFFFF;
 }
 
+
 #enterBudget {
   text-align: center;
   background-color: #CBF3F0;
@@ -86,6 +94,7 @@ body {
 #userBudget {
   border-radius: 10px;
   height: 50px;
+
   width: 50%;
   font-size: 30px;
 }
@@ -218,3 +227,4 @@ button{
     height: 100%;
   }
 }
+

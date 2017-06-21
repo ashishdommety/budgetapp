@@ -10,6 +10,7 @@ $(document).ready(function() {
     messagingSenderId: "93264138315"
   };
 
+
   firebase.initializeApp(config);
 
   var provider = new firebase.auth.GoogleAuthProvider();
@@ -70,6 +71,7 @@ $(document).ready(function() {
       url: queryURL,
       method: "GET"
     }).done(function(event) {
+
         var data = event.stocks;
 
         var stockPrice = 100; //this is a default value
