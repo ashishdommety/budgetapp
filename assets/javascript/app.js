@@ -13,7 +13,7 @@ $(document).ready(function() {
   firebase.initializeApp(config);
 
   var provider = new firebase.auth.GoogleAuthProvider();
-
+  
   var database = firebase.database();
 
   var stockBought, budget;
@@ -378,6 +378,7 @@ $(document).ready(function() {
     localStorage.removeItem("name");
     localStorage.removeItem("picture");
     localStorage.removeItem("budget");
+
     firebase.auth().signOut().then(function() {
       // Sign-out successful.
       console.log("You've signed out");
@@ -523,3 +524,5 @@ $(document).ready(function() {
 
 
 });
+
+
