@@ -5,7 +5,7 @@
   <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
   <title>Investing App</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans|Titillium+Web" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -44,11 +44,11 @@
         <h1 id="appName">HypoInvest</h1>
       </div>
       <img id="logo" src="assets/images/logo.png" alt="Logo">
-      <button id="loginButton" type="button" name="button">Login</button>
+      <button id="loginButton" type="button" name="button">Login with Google</button>
     </div>
     <div class="row animated fadeInLeft" id="enterBudget">
       <h2>Enter your budget:<span id="budget"></span></h2>
-      <input id="userBudget" type="text" name="" value="412">
+      <input id="userBudget" type="text" name="" value="">
       <button id="budgetButton" type="button" name="button">confirm</button>
     </div>
     <div class="white">
@@ -59,30 +59,56 @@
     </div>
     <div class='white'>
       <div class="row" id="displayText">
-        <h2>Here are some stocks you can invest in:</h2>
+        <h2>Here are <span id=stockNumber></span> stocks you can invest in:</h2>
       </div>
     </div>
     <div class="row animated fadeInRight" id="stockOptions">
       <!-- stock options are filled in here -->
     </div>
     <div class="row animated fadeInLeft" id="checkoutFooter">
-      <h4>You are about to buy <b><span id="stockQuantity">4</span> stocks of <span id="stockName"></span></b></h4>
+      <h4>You are about to buy <b><span id="stockQuantity"></span> shares of <span id="stockName"></span></b></h4>
       <h4>You will have <b> $<span id="remainingChange"></span> remaining</b></h3>
       <button id="confirm" type="button" name="button"><h4>Confirm</h4></button>
       <button id="cancel" type="button" name="button"><h4>Cancel</h4></button>
     </div>
     <div class="row animated fadeInDown" id="investmentSection">
-      <h2>Here are your returns: $<span id="returns">1000</span> </h2>
-      <div id="userBuy">
-        <!-- we inject what the user bought here -->
+      <div class="row" id="userDetails">
+        <div class="col-md-8">
+          <h2>Hey there, <b><span id="holdings-user-name"></span></b></h2>
+          <h3>Your initial budget was <b>$<span id="holdings-user-budget"></span></b></h3>
+          <h3>You bought <b><span id="holdings-stock-quantity"></span></b> shares of <b><span id="holdings-stock-name"></span></b></h3>
+          <h3>You have <b>$<span id="holdings-user-balance"></span></b> remaining</h3>
+          <!-- <h2>Your gain so far: $<span id="gain"></span> </h2> -->
+        </div>
+        <div class="col-md-4">
+          <img id="holdings-user-image" src="" alt="">
+        </div>
       </div>
-      <div id="userInvestments">
-        <!-- stan will inject the bought stock info here -->
+      <hr>
+
+      <div class="row">
+        <div class="col-md-6" id="userGraph">
+          <canvas id="myChart" width="300" height="230"></canvas>
+          <!-- stan will inject the bought stock info here -->
+        </div>
+        <div class="col-md-6" id="article">
+          <h2>TODAY'S NEWS</h2>
+          <div id="headline-view"></div>
+          <div id="provider-view"></div>
+          <div id="image-view"></div>
+          <div id="url-view"></div>
+        </div>
       </div>
-      <div id="article">
-        <!-- we can inject the article from new york times here -->
+
+      <hr>
+
+      <div id="sellPart">
+        <div class="row">
+            <h3>Would you like to reinvest?</h3>
+            <button id="sell" type="button" name="button"><h4>Sell</h4></button>
+        </div>
       </div>
-      <button id="sell" type="button" name="button"><h4>Sell</h4></button>
+
     </div>
 
   </div>
@@ -90,6 +116,8 @@
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>
   <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js" charset="utf-8"></script>
   <script src="assets/javascript/app.js" charset="utf-8"></script>
 </body>
 
