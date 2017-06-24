@@ -244,6 +244,7 @@ $(document).ready(function() {
 
     $("#sell").on("click", function() {
       var sellQuantity, sellPrice, ticker, purchasePrice, gain;
+      $("#stockOptions").empty();
 
       database.ref('user/' + localStorage.guid).child('transactions').on("value", getData, error);
 
